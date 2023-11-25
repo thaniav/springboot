@@ -1,13 +1,15 @@
 package com.in28minutes.rest.webservices.restfulwebservices.filtering;
 
+import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-@JsonIgnoreProperties("value1")   //can do this instead of JsonIgnore too 
+@JsonFilter("SomeBeanFilter") // dynamic filtering. SomeBeanFilter is defined in FilteringController
+// @JsonIgnoreProperties("value1")   //can do this instead of JsonIgnore too 
 public class SomeBean {
     private String value1;
 
-    @JsonIgnore // static filtering 
+    // @JsonIgnore // static filtering 
     private String value2;
 
     private String value3;
